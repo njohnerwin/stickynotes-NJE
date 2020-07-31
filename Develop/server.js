@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const dbpath = (path.join(__dirname, "/db/db.json"));
 let notes = JSON.parse(fs.readFileSync(dbpath, (err, data) => {return data}));
